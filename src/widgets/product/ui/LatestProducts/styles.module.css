@@ -1,0 +1,15 @@
+.latest {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+}
+
+.title {
+  font-size: 33px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 57px;
+}

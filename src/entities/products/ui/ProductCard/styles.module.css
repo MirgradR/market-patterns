@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 10px;
+  gap: 12px;
+}
+
+.price {
+  color: rgb(161, 138, 104);
+}

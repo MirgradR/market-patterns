@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "DM Sans", "sans-serif";
+}
+
+.container {
+  padding: 24px;
+  min-height: 100vh;
+}
+
+a {
+  color: black;
+}
