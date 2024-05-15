@@ -5,7 +5,7 @@ import { getProducts } from "@/entities/products/api/newsApi";
 
 const LatestProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  console.log(products);
+  console.log(products.map((e) => e.category));
   useEffect(() => {
     const fetchProducts = async () => {
       try {
