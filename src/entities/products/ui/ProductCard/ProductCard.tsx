@@ -9,11 +9,34 @@ interface Props {
 const ProductCard = ({ product }: Props) => {
   return (
     <article className={styles.card}>
-      <Image image={product.image} />
+      {product.category === "jewelery" && <Image image={product.image} />}
 
-      <p>{product.title}</p>
+      <p
+        style={{
+          color:
+            product.category === "electronics"
+              ? "blue"
+              : product.category === "jewelery"
+              ? "gold"
+              : "black",
+        }}
+      >
+        {product.title}{" "}
+        {product.category === "electronics" && (
+          <span>({product.category})</span>
+        )}
+      </p>
 
-      <p className={styles.price}>$ {product.price}</p>
+      {product.category !== "jewelery" && <Image image={product.image} />}
+
+      {product.category === "women's clothing" ? (
+        <div>
+          <p className={styles.price}>Price: ${product.price}</p>
+          <p className={styles.price}>Rate: {product.rating.rate}</p>
+        </div>
+      ) : (
+        <p className={styles.price}>$ {product.price}</p>
+      )}
     </article>
   );
 };
