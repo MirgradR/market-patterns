@@ -1,6 +1,7 @@
 import Logo from "@/shared/ui/Logo/Logo";
 import styles from "./styles.module.css";
-import Button from "@/shared/ui/Button/Button";
+import RegisterButton from "@/features/auth/register/ui/RegisterButton/RegisterButton";
+import LoginButton from "@/features/auth/login/ui/LoginButton/LoginButton";
 
 const Header = () => {
   return (
@@ -21,8 +22,8 @@ const Header = () => {
         </ul>
 
         <div className={styles.buttons}>
-          <Button type="primary" label="Sign In" onClick={() => null} />
-          <Button type="secondary" label="Sign Up" onClick={() => null} />
+          <LoginButton />
+          <RegisterButton />
         </div>
       </nav>
     </header>
