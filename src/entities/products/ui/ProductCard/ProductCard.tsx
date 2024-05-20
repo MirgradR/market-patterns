@@ -1,21 +1,25 @@
-import Image from "@/shared/ui/Image/Image";
 import { Product } from "../../model/types";
-import styles from "./styles.module.css";
+import ElectronicsProduct from "./ElectronicsProduct/ElectronicsProduct";
+import JewelryProduct from "./JewelryProduct/JewelryProduct";
+import MensClothingProduct from "./MensClothingProduct/MensClothingProduct";
+import WomensClothingProduct from "./WomensClothingProduct/WomensClothingProduct";
 
 interface Props {
   product: Product;
 }
 
 const ProductCard = ({ product }: Props) => {
-  return (
-    <article className={styles.card}>
-      <Image image={product.image} />
-
-      <p>{product.title}</p>
-
-      <p className={styles.price}>$ {product.price}</p>
-    </article>
-  );
+  switch (product.category) {
+    case "jewelery":
+      return <JewelryProduct product={product} />;
+    case "electronics":
+      return <ElectronicsProduct product={product} />;
+    case "women's clothing":
+      return <WomensClothingProduct product={product} />;
+    case "men's clothing":
+      return <MensClothingProduct product={product} />;
+    default:
+      return null;
+  }
 };
-
 export default ProductCard;

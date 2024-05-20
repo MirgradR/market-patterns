@@ -1,5 +1,7 @@
 import Logo from "@/shared/ui/Logo/Logo";
 import styles from "./styles.module.css";
+import RegisterButton from "@/features/auth/register/ui/RegisterButton/RegisterButton";
+import LoginButton from "@/features/auth/login/ui/LoginButton/LoginButton";
 
 const Header = () => {
   return (
@@ -18,6 +20,11 @@ const Header = () => {
             <a href="#">Our Story</a>
           </li>
         </ul>
+
+        <div className={styles.buttons}>
+          <LoginButton />
+          <RegisterButton />
+        </div>
       </nav>
     </header>
   );

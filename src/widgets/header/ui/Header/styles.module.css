@@ -13,3 +13,17 @@
   flex-direction: row;
   gap: 64px;
 }
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
