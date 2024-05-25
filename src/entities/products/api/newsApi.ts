@@ -1,11 +1,12 @@
-import axios from "axios";
+import { axiosConfigBuilder } from "@/shared/utils/configs/axiosConfigBuilder";
 
 const API_BASE_URL = "https://fakestoreapi.com";
 
-const axiosInstance = axios.create({
-  baseURL: API_BASE_URL,
-  timeout: 10000,
-});
+const axiosInstance = axiosConfigBuilder()
+  .setBaseURL(API_BASE_URL)
+  .setTimeout(10000)
+  .setHeaders({ "Content-Type": "application/json" })
+  .build();
 
 const handleApiError = (error: unknown) => {
   console.error("API call failed. ", error);

@@ -1,7 +1,7 @@
 import Logo from "@/shared/ui/Logo/Logo";
 import styles from "./styles.module.css";
-import RegisterButton from "@/features/auth/register/ui/RegisterButton/RegisterButton";
-import LoginButton from "@/features/auth/login/ui/LoginButton/LoginButton";
+import { LoginButton } from "@/features/auth/login";
+import { RegisterButton } from "@/features/auth/register";
 
 const Header = () => {
   return (
