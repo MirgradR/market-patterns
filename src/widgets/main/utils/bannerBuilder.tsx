@@ -13,7 +13,7 @@ type BannerBuilder = {
 
 export const useBannerBuilder = () => {
   const props = useRef<BannerProps>({} as BannerProps);
-
+  console.log("--render useBannerBuilder");
   const validateTitle = (title: string) => {
     if (title.length > 50) {
       throw new Error("Title is too long");

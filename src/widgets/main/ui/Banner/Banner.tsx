@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { BannerProps } from "../../model/types";
 
 const Banner = ({ title, text, price, onClick }: BannerProps) => {
+  console.log("--render Banner");
   return (
     <section className={styles.wrapper}>
       <img src={images.banner} alt="banner" className={styles.image} />
