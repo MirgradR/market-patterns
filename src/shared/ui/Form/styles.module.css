@@ -1,0 +1,33 @@
+.input {
+  border: none;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  padding: 10px 0;
+  color: rgb(112, 112, 112);
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.button {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 16px;
+  width: 100%;
+  cursor: pointer;
+}

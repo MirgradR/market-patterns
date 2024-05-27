@@ -1,12 +1,19 @@
 import { images } from "@/shared/assets";
 import styles from "./styles.module.css";
-import Button from "@/shared/ui/Button/Button";
+import { BannerProps } from "../../model/types";
 
-const Banner = () => {
+const Banner = ({ title, text, price, onClick }: BannerProps) => {
+  console.log("--render Banner");
   return (
     <section className={styles.wrapper}>
       <img src={images.banner} alt="banner" className={styles.image} />
-      <Button type="danger" label="Sales" onClick={() => null} />
+      {title ? <h3 className={styles.title}>{title}</h3> : null}
+      {price ? <h3 className={styles.price}>{price}</h3> : null}
+      {text ? (
+        <button className={styles.button} onClick={onClick}>
+          {text}
+        </button>
+      ) : null}
     </section>
   );
 };
