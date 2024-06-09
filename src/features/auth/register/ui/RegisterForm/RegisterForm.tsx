@@ -12,6 +12,7 @@ const RegisterForm = () => {
     .addField("email", "Email", "email")
     .addField("password", "Password", "password")
     .addField("confirmPassword", "Confirm Password", "password")
+    .addButton("Submit")
     .setOnSubmit(onSubmit);
 
   const Form = formBuilder.build();

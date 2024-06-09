@@ -9,6 +9,7 @@ const LoginForm = () => {
   const formBuilder = useFormBuilder<LoginFormData>()
     .addField("email", "Email", "email")
     .addField("password", "Password", "password")
+    .addButton("Submit")
     .setOnSubmit(onSubmit);
 
   const Form = formBuilder.build();

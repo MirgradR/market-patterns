@@ -1,3 +1,5 @@
+import { FormEventHandler, ReactElement } from "react";
+
 export type RegisterFormData = {
   username: string;
   email: string;
@@ -20,7 +22,7 @@ export type Field = {
   value: string;
 };
 
-export type FormProps<T> = {
-  fields: Field[];
-  onSubmitHandler?: OnSubmitFunction<T>;
-};
+export interface FormProps {
+  fields: ReactElement[];
+  onSubmitHandler?: FormEventHandler<HTMLFormElement>;
+}
