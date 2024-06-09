@@ -12,7 +12,6 @@ type FormBuilder<T> = {
   makeRequired: () => FormBuilder<T>;
   addButton: (label: string) => FormBuilder<T>;
   setOnSubmit: (onSubmit: OnSubmitFunction<T>) => FormBuilder<T>;
-  reorderFields: (fromIndex: number, toIndex: number) => FormBuilder<T>;
   build: () => ReactElement;
   clearRefs: () => void;
 };
@@ -62,13 +61,6 @@ export const useFormBuilder = <T extends Record<string, string>>() => {
     },
     setOnSubmit: (onSubmit) => {
       onSubmitRef.current = handleSubmit(onSubmit);
-      return builder;
-    },
-    reorderFields: (fromIndex: number, toIndex: number) => {
-      const fields = [...fieldsRef.current];
-      const [movedField] = fields.splice(fromIndex, 1);
-      fields.splice(toIndex, 0, movedField);
-      fieldsRef.current = fields;
       return builder;
     },
     build: () => (
