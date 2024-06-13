@@ -1,11 +1,11 @@
-import { Product } from "../../model/types";
+import { ProductWithCurrency } from "../../model/types";
 import ElectronicsProduct from "./ElectronicsProduct/ElectronicsProduct";
 import JewelryProduct from "./JewelryProduct/JewelryProduct";
 import MensClothingProduct from "./MensClothingProduct/MensClothingProduct";
 import WomensClothingProduct from "./WomensClothingProduct/WomensClothingProduct";
 
 interface Props {
-  product: Product;
+  product: ProductWithCurrency;
 }
 
 const ProductCard = ({ product }: Props) => {

@@ -6,10 +6,10 @@ const MainPage = () => {
   const onClick = () => {
     console.log("Click");
   };
-  console.log("--render MainPage");
+
   const bannerBuilder = useBannerBuilder()
     .setTitle("Gold big hoops")
-    .setPrice("199.99")
+    .setPrice(199.99)
     .setButton("View product")
     .setOnClick(onClick);
 

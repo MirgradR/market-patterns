@@ -1,9 +1,9 @@
 import Image from "@/shared/ui/Image/Image";
-import { Product } from "../../../model/types";
+import { ProductWithCurrency } from "../../../model/types";
 import styles from "../styles.module.css";
 
 interface Props {
-  product: Product;
+  product: ProductWithCurrency;
 }
 
 const JewelryProduct = ({ product }: Props) => (
@@ -12,7 +12,7 @@ const JewelryProduct = ({ product }: Props) => (
 
     <p style={{ color: "gold" }}>{product.title}</p>
 
-    <p className={styles.price}>$ {product.price}</p>
+    <p className={styles.price}>{product.price}</p>
   </article>
 );
 

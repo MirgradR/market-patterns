@@ -10,3 +10,7 @@ export interface Product {
     rate: number;
   };
 }
+
+export interface ProductWithCurrency extends Omit<Product, "price"> {
+  price: string;
+}
