@@ -24,7 +24,7 @@ export const useBannerBuilder = () => {
   };
 
   const formatPrice = (price: number) => {
-    return `${currencyStrategy.strategy(price)}`;
+    return `${currencyStrategy.formatPrice(price)}`;
   };
 
   const builder: BannerBuilder = {

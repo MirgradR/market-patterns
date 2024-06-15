@@ -25,18 +25,9 @@ const LatestProducts = () => {
   const productsWithCurrency = useMemo(() => {
     return products.map((product) => ({
       ...product,
-      price: currencyStrategy.strategy(product.price),
+      price: currencyStrategy.formatPrice(product.price),
     }));
   }, [products, currencyStrategy]);
-
-  // useEffect(() => {
-  //   setProducts((prevProducts) =>
-  //     prevProducts.map((product) => ({
-  //       ...product,
-  //       price: currencyStrategy.strategy(product.price),
-  //     }))
-  //   );
-  // }, [currencyStrategy]);
 
   return (
     <section className={styles.latest}>

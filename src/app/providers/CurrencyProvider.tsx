@@ -12,11 +12,11 @@ export const CurrencyContext = createContext<CurrencyContextType | undefined>(
 
 export const CurrencyProvider = ({ children }: { children: ReactElement }) => {
   const [currencyStrategy, setCurrencyStrategy] = useState<CurrencyStrategy>({
-    strategy: (price: number) => price + " USD",
+    formatPrice: (price: number) => price + " USD",
   });
 
   const changeStrategy = (strategy: (price: number) => string) => {
-    setCurrencyStrategy({ strategy });
+    setCurrencyStrategy({ formatPrice: strategy });
   };
 
   return (

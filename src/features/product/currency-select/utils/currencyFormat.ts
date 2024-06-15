@@ -1,5 +1,5 @@
 export interface CurrencyStrategy {
-  strategy: (price: number) => string;
+  formatPrice: (price: number) => string;
 }
 
 export const currencyFormat = {
