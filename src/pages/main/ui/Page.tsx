@@ -1,15 +1,17 @@
 import styles from "./styles.module.css";
 import { LatestProducts } from "@/widgets/product";
 import { useBannerBuilder } from "@/widgets/main/utils/bannerBuilder";
+import DiscountBanner from "@/widgets/main/ui/Discount/DiscountBanner";
+// import CreateProductForm from "@/features/product/create-product/ui/CreateProductForm/CreateProductForm";
 
 const MainPage = () => {
   const onClick = () => {
     console.log("Click");
   };
-  console.log("--render MainPage");
+
   const bannerBuilder = useBannerBuilder()
     .setTitle("Gold big hoops")
-    .setPrice("199.99")
+    .setPrice(199.99)
     .setButton("View product")
     .setOnClick(onClick);
 
@@ -18,8 +20,9 @@ const MainPage = () => {
 
   return (
     <main className={styles.main}>
+      {/* <CreateProductForm /> */}
       {Banner}
-
+      <DiscountBanner strategy={(amount: number) => amount * 1} amount={1000} />
       <LatestProducts />
     </main>
   );

@@ -1,10 +1,11 @@
 import { useRef } from "react";
 import Banner from "../ui/Banner/Banner";
 import { BannerProps } from "../model/types";
+import { useCurrencyStrategy } from "@/shared/utils/hooks/useCurrencyStrategy";
 
 type BannerBuilder = {
   setTitle: (title: string) => BannerBuilder;
-  setPrice: (price: string) => BannerBuilder;
+  setPrice: (price: number) => BannerBuilder;
   setButton: (text: string) => BannerBuilder;
   setOnClick: (onClick: () => void) => BannerBuilder;
   build: () => React.ReactElement;
@@ -13,7 +14,8 @@ type BannerBuilder = {
 
 export const useBannerBuilder = () => {
   const props = useRef<BannerProps>({} as BannerProps);
-  console.log("--render useBannerBuilder");
+  const { currencyStrategy } = useCurrencyStrategy();
+
   const validateTitle = (title: string) => {
     if (title.length > 50) {
       throw new Error("Title is too long");
@@ -21,8 +23,8 @@ export const useBannerBuilder = () => {
     return title;
   };
 
-  const formatPrice = (price: string) => {
-    return `$${parseFloat(price).toFixed(2)}`;
+  const formatPrice = (price: number) => {
+    return `${currencyStrategy.formatPrice(price)}`;
   };
 
   const builder: BannerBuilder = {
@@ -30,7 +32,7 @@ export const useBannerBuilder = () => {
       props.current.title = validateTitle(title);
       return builder;
     },
-    setPrice: (price: string) => {
+    setPrice: (price: number) => {
       props.current.price = formatPrice(price);
       return builder;
     },

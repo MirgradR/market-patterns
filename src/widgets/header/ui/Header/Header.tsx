@@ -2,6 +2,7 @@ import Logo from "@/shared/ui/Logo/Logo";
 import styles from "./styles.module.css";
 import { LoginButton } from "@/features/auth/login";
 import { RegisterButton } from "@/features/auth/register";
+import CurrencySelect from "@/features/product/currency-select/ui/CurrencySelect";
 
 const Header = () => {
   return (
@@ -20,6 +21,8 @@ const Header = () => {
             <a href="#">Our Story</a>
           </li>
         </ul>
+
+        <CurrencySelect />
 
         <div className={styles.buttons}>
           <LoginButton />

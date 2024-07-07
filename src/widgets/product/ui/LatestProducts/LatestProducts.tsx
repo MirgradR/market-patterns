@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import styles from "./styles.module.css";
-import { Product, ProductCard } from "@/entities/products";
+import { ProductCard } from "@/entities/products";
 import { getProducts } from "@/entities/products/api/newsApi";
+import { Product } from "@/entities/products/model/types";
+import { useCurrencyStrategy } from "@/shared/utils/hooks/useCurrencyStrategy";
 
 const LatestProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const { currencyStrategy } = useCurrencyStrategy();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -19,12 +22,19 @@ const LatestProducts = () => {
     fetchProducts();
   }, []);
 
+  const productsWithCurrency = useMemo(() => {
+    return products.map((product) => ({
+      ...product,
+      price: currencyStrategy.formatPrice(product.price),
+    }));
+  }, [products, currencyStrategy]);
+
   return (
     <section className={styles.latest}>
       <h5 className={styles.title}>Shop The Latest</h5>
 
       <ul className={styles.products}>
-        {products.map((product) => {
+        {productsWithCurrency.map((product) => {
           return (
             <li key={product.id}>
               <ProductCard product={product} />

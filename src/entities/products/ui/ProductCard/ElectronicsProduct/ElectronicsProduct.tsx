@@ -1,9 +1,9 @@
 import Image from "@/shared/ui/Image/Image";
-import { Product } from "../../../model/types";
+import { ProductWithCurrency } from "../../../model/types";
 import styles from "../styles.module.css";
 
 interface Props {
-  product: Product;
+  product: ProductWithCurrency;
 }
 
 const ElectronicsProduct = ({ product }: Props) => (
@@ -13,7 +13,7 @@ const ElectronicsProduct = ({ product }: Props) => (
       <span>({product.category})</span>
     </p>
 
-    <p className={styles.price}>$ {product.price}</p>
+    <p className={styles.price}>{product.price}</p>
 
     <Image image={product.image} />
   </article>
