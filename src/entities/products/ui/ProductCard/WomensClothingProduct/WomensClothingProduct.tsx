@@ -12,7 +12,7 @@ const WomensClothingProduct = ({ product }: Props) => (
 
     <div>
       <p className={styles.price}>Price: {product.price}</p>
-      <p className={styles.price}>Rate: {product.rating.rate}</p>
+      <p className={styles.price}>Rate: {product.ratingRate}</p>
     </div>
 
     <Image image={product.image} />

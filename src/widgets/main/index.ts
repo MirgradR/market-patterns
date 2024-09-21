@@ -1,3 +1,4 @@
+import AdaptedBanner from "./ui/Banner/AdaptedBanner";
 import Banner from "./ui/Banner/Banner";
 
-export { Banner };
+export { AdaptedBanner, Banner };
