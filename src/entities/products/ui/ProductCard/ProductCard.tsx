@@ -8,6 +8,20 @@ interface Props {
   product: ProductWithCurrency;
 }
 
+// export const ProductCardAdapter = ({ product }: Props) => {
+//   const adaptetProduct = {
+//     id: product.id,
+//     title: product.title,
+//     description: product.description,
+//     image: product.image,
+//     category: product.category,
+//     price: product.price,
+//     ratingCount: product.rating.count,
+//     ratingRate: product.rating.rate,
+//   };
+//   return <ProductCard product={adaptetProduct} />;
+// };
+
 const ProductCard = ({ product }: Props) => {
   switch (product.category) {
     case "jewelery":
