@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
+import { useReactifyStore } from "@/shared/utils/hooks/useReactifyStore";
+import { productStore } from "@/entities/products/model/productStore";
 
 interface Props {
   strategy: (amount: number) => number;
@@ -16,12 +18,17 @@ const DiscountBanner = ({ strategy, amount }: Props) => {
   const handleChangeStrategy = (newStrategy: (amount: number) => number) => {
     setDiscountedPrice(newStrategy(amount));
   };
-
+  const [products, setStoreState] = useReactifyStore(productStore);
+  console.log(products);
+  console.log("---render discount");
   return (
     <div className={styles.banner}>
       <p className={styles.price}>Цена со скидкой: {discountedPrice}</p>
 
-      <div className={styles.buttons}>
+      <div
+        onClick={() => setStoreState({ products: [] })}
+        className={styles.buttons}
+      >
         <button
           className={styles.button}
           onClick={() => handleChangeStrategy(discountStrategy1)}
