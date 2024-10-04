@@ -3,8 +3,13 @@ import styles from "./styles.module.css";
 import { LoginButton } from "@/features/auth/login";
 import { RegisterButton } from "@/features/auth/register";
 import CurrencySelect from "@/features/product/currency-select/ui/CurrencySelect";
+import { useReactifyStore } from "@/shared/utils/hooks/useReactifyStore";
+import { productStore } from "@/entities/products/model/productStore";
 
 const Header = () => {
+  const [products] = useReactifyStore(productStore);
+  console.log(products);
+  console.log("---render header");
   return (
     <header className={styles.header}>
       <Logo />
